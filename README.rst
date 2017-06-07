@@ -9,3 +9,4 @@ Liens:
  - http://bofip.impots.gouv.fr/bofip/10691-PGP
  - https://www.lne.fr/fr/certification/reglements/referentiel-certification-systemes-caisse.pdf
  - https://mensuel.framapad.org/p/wcqzwJ4COq
+voici mon avis
