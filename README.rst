@@ -37,7 +37,9 @@ Le **contenu** est un champ texte dont la syntaxe exacte reste a definir, qui co
  - tout changement de l'état d'une facture/commande/devis (validation, anulation?)
  - une impression de devis/commande/ticket/facture ? (condition 5 du referentiel)
  - une reimpression de devis/commande/facture ? (condition 5 du referentiel)
- - une écriture comptable? 
+ - une piece/écriture comptable
+ - les comptes et les journaux comptables
+ - les taxes
 
 
 Le **hash** sha2 est le hash de la chaine suivante:
@@ -68,6 +70,12 @@ Il depend de lf2016_logs et herite de create et write sur les factures et reglem
 
 Il fait un suivi également de tous les changements d'états, et de toutes les impressions (comment???)
 
+Le module lf2016_account
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+A l'installation, il rajoute dans les logs la listes des comptes/journaux
+Il depend de lf2016_logs et rajoute chaque creation de piece comptable, de ligne comptable, changement d'etat d'une piece comptable, chaque modification dans le module log
+Il reporte la creation/modif/suppression des compte et les journaux comptables
   
 Le module lf2016_pos 
 ~~~~~~~~~~~~~~~~~~~~~
