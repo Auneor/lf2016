@@ -27,10 +27,10 @@ class lf2016_logs(models.Model):
 
         return creation
 
-    def write(self, cr, uid, ids, vals, context=None):
+    def write(self, vals):
         if "name" in vals:
             del vals['name']
-        return super(lf2016_logs,self).write(cr,uid,ids,vals,context)
+        return super(lf2016_logs,self).write(vals);
 
 
 class CheckWizard(models.TransientModel):
