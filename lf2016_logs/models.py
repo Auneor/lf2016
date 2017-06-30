@@ -3,6 +3,7 @@
 from openerp import models, fields, api
 import hashlib
 
+
 class lf2016_logs(models.Model):
     _name = 'lf2016_logs.lf2016_logs'
     name = fields.Char(string="Contenu")
@@ -31,6 +32,7 @@ class lf2016_logs(models.Model):
             del vals['name']
         return super(lf2016_logs,self).write(cr,uid,ids,vals,context)
 
+
 class CheckWizard(models.TransientModel):
     _name="lf2016_logs.wizard"
     result=fields.Text(string="Result",readonly=True)
@@ -41,6 +43,8 @@ class CheckWizard(models.TransientModel):
         res=""
         hashPrecedent=""
         idPrecedent=""
+        if all and all[0].id != 1:
+            res+="Attention, les ID ne commencent pas par 1\n"
         for a in all:
             if not idPrecedent:
                 idPrecedent=a.id
@@ -49,9 +53,13 @@ class CheckWizard(models.TransientModel):
                     res+="Attention, Saut dans les ID, entre "+str(idPrecedent)+" et "+str(a.id)+"\n"
                 idPrecedent=a.id
             toHash=hashPrecedent+a.create_date+a.name+"\n"
-            if hashlib.sha256(toHash).hexdigest()!=a.hash:
+            if not a.hash:
+                res+="ERREUR: id "+str(a.id)+" Le hash n'est pas present\n"
+            elif hashlib.sha256(toHash).hexdigest()!=a.hash:
                 res+="ERREUR: id "+str(a.id)+" Le hash n'est pas bon\n"
             hashPrecedent=a.hash
         if not res:
             res="Base cohérente, pas d'erreur trouvée"
         self.result=res
+
+
