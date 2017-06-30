@@ -27,7 +27,7 @@ Il contient un modele/table avec notamment les colonnes suivantes:
  - id (id postgresql, rajouté automatiquement par odoo)
  - create_date (date de création, rajouté automatiquement par odoo)
  - contenu 
- - hash sha-2
+ - hash (un hash sha-256)
 
 Le **contenu** est un champ texte dont la syntaxe exacte reste a definir, qui contient un événement qui doit être archivé pour respecter la loi, entre autres:
  - chaque ajout/suppression/modification d'une ligne d'une facture/commande/devis
