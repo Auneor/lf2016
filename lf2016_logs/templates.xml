@@ -1,0 +1,74 @@
+<openerp>
+    <data>
+
+        <record model="ir.actions.act_window" id="check_log_list">
+            <field name="name">Logs</field>
+            <field name="res_model">lf2016_logs.wizard</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+        </record>
+
+
+        <record model="ir.ui.view" id="wizard_form_view">
+            <field name="name">wizard.form</field>
+            <field name="model">lf2016_logs.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Generer">
+                    <footer>
+                        <button name="check" string="Check" type="object"/>
+                        <field name="result"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+
+        <record model="ir.actions.act_window" id="log_list_action">
+            <field name="name">Logs</field>
+            <field name="res_model">lf2016_logs.lf2016_logs</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Create the first log
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="main_lf2016_menu" name="Lf2016"/>
+        <menuitem id="lf2016_menu" name="Lf2016"
+                  parent="main_lf2016_menu"/>
+        <menuitem id="logs_menu" name="Logs" parent="lf2016_menu"
+                  action="log_list_action"/>
+        <menuitem id="ckeck_logs_menu" name="Check Logs" parent="lf2016_menu"
+                  action="check_log_list"/>
+
+        <record model="ir.ui.view" id="log_tree_view">
+            <field name="name">log.tree</field>
+            <field name="model">lf2016_logs.lf2016_logs</field>
+            <field name="arch" type="xml">
+                <tree string="Logs Tree">
+                    <field name="id"/>
+                    <field name="create_date"/>
+                    <field name="name"/>
+                    <field name="hash"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="log_form_view">
+            <field name="name">log.form</field>
+            <field name="model">lf2016_logs.lf2016_logs</field>
+            <field name="arch" type="xml">
+                <form string="Logs Form">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="hash"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</openerp>

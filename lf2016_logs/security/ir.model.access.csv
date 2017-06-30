@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_lf2016_logs_lf2016_logs,lf2016_logs.lf2016_logs,model_lf2016_logs_lf2016_logs,,1,0,0,0
