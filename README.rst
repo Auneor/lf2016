@@ -43,8 +43,8 @@ Le **contenu** est un champ texte dont la syntaxe exacte reste a definir, qui co
 
 
 Le **hash** sha2 est le hash de la chaine suivante:
- - date+contenu de la ligne courante concaténé au hash de la ligne précédente
- - date+contenu de la ligne courante pour la premiere ligne de la table
+ - date+contenu de la ligne courante concaténé au hash de la ligne précédente+le caractere end of line("\n")
+ - date+contenu de la ligne courante pour la premiere ligne de la table+le caractere end of line("\n")
 
 
 Cette structure nous permet de garantir qu'aucune donnée n'a été altérée de deux manières:
