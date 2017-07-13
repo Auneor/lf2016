@@ -11,6 +11,12 @@ Il s'agit aussi de définir des dates, dates auxquelles ont veut voir une foncti
 
 Nous nous basons sur le document du lne comme objectif https://www.lne.fr/fr/certification/reglements/referentiel-certification-systemes-caisse.pdf
 
+Devs existants
+---------------
+Odoo a crée les modules https://github.com/odoo/odoo/tree/9.0/addons/l10n_fr_certification et https://github.com/odoo/odoo/tree/10.0/addons/l10n_fr_certification pour la v9 et la v10, mais ils n'ont pas l'air de toucher au POS
+
+Sylvain Legal a crée 3 modules pour la v8 https://github.com/OCA/l10n-france/pull/108 qui devraient être merge avec le repository de la OCA (pas encore au 13/07/17)
+
 Architecture
 -------------
 
